@@ -34,7 +34,7 @@ console.log(year);
 console.log(year_data);
 display_yearly();
 
-// Initial Chart
+// Initial chart for yearly dataset
 function initialize_chart(year, year_data) {
     var bar_data = {
         // Label from year
@@ -86,13 +86,13 @@ function initialize_chart(year, year_data) {
     };
 
     myBarChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: bar_data,
         options: options
     });
 
 }
-
+// Retrieve weekly dataset
 function retrieve_weekly(csvpath) {
     // Load yearly cluster data
     Promise.all([d3.csv("dataset/" + csvpath)]).then(data => {
@@ -161,7 +161,7 @@ function retrieve_weekly(csvpath) {
 
     })
 }
-
+// User toggle back to year
 function back_year() {
     myBarChart.destroy();
     display_yearly();
