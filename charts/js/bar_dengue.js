@@ -103,9 +103,12 @@ function retrieve_weekly(csvpath) {
         var weekly_label = []
         var weekly_cases = []
 
+        // Get the year
+        title_label = data[0][0].week.slice(0, 4);
 
         for (var i = 0; i < data[0].length; i++) {
-            weekly_label.push(data[0][i].week);
+
+            weekly_label.push(data[0][i].week.slice(5));
             weekly_cases.push(data[0][i].cases);
         }
 
@@ -143,12 +146,18 @@ function retrieve_weekly(csvpath) {
                     ticks: {
                         beginAtZero: true
                     }
+                }],
+                xAxes: [{
+                    ticks: {
+                        autoSkip: true,
+                        maxTicksLimit: 20
+                    }
                 }]
             },
             title: {
                 fontSize: 18,
                 display: true,
-                text: 'Dengue (Weekly)',
+                text: 'Year ' + title_label + ' Dengue Cases (Weekly)',
                 position: 'bottom'
             }
         };
