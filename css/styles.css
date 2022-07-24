@@ -676,7 +676,7 @@ color:#fff;
 #contact-us {
   padding: 100px 0;
   background: #07080A;
-  background: url('../images/banner2.jpg');    
+  /* background: url('../images/banner2.jpg');     */
   background-size: cover;  };
 }
 #contact-us .column-title{
