@@ -13,6 +13,12 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="map_styles.css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -21,6 +27,7 @@
 </head>
 
 <body id="home">
+    
     <header id="header">
         <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
             <div class="container">
@@ -107,11 +114,13 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6 wow fadeInLeft">
-                    <img class="img-responsive" id="services-logo" src="images/about2.png" alt="">
+                <div class="col-sm-12 wow fadeInLeft">
+                    <canvas id="barChart"></canvas>
+                     <button type="button" class="btn btn-success btn-md" onclick="back_year();">Back </button>
                 </div>
 
-                <div class="col-sm-6 wow fadeInRight">
+                <div class="col-sm-12 wow fadeInRight">
+                    <br>
                     <h3 class="column-title">Bar/Line Chart</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
                 </div>
@@ -129,11 +138,12 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6 wow fadeInLeft">
-                    <img class="img-responsive" id="services-logo" src="images/about2.png" alt="">
+                <div class="col-sm-12 wow fadeInLeft">
+                    <div id="map"></div>
                 </div>
 
-                <div class="col-sm-6 wow fadeInRight">
+                <div class="col-sm-12 wow fadeInRight">
+                    <br>
                     <h3 style ="color:black;" class="column-title">Chloropath Map</h3>
                     <p style="font-size: 135%;
                     font-weight: 400;
@@ -189,6 +199,10 @@
     <script src="js/jquery.inview.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/custom-scripts.js"></script>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <script src="map_script.js"></script>
+    <script src="/charts/js/bar_dengue.js"></script>
 </body>
 
 </html>
