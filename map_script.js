@@ -93,9 +93,10 @@ fetch(apiUrl)
   fetch(clinicJson)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data.SrchResults[1].LatLng);
-    var x = parseFloat(data.SrchResults[1].LatLng);
-    console.log()
+    // console.log(data.SrchResults[1].LatLng);
+    var x = data.SrchResults[1].LatLng.split(",");
+    console.log(x)
+    // console.log()
     // var testArray = [];
     // var clinic =  data.SrchResults[1].LatLng.split(",");
     // console.log(clinic)
@@ -113,10 +114,13 @@ fetch(apiUrl)
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
-    L.marker([x], {icon: greenIcon}).addTo(map);
+    // L.marker(x, {icon: greenIcon}).addTo(map);
 
     // const myArray2 = [];
     for (let i = 1; i < data.SrchResults.length; i++) {
+        var x = data.SrchResults[i].LatLng.split(",");
+        // console.log(x)
+        // L.marker(x, {icon: greenIcon}).addTo(map);
         // var example = data.SrchResults[i].LatLng;
         // var tempArray = [];
         // tempArray.push(example)
