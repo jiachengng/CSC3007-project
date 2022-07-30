@@ -79,6 +79,8 @@ function initialize_chart(year, year_data) {
             console.log("hi");
             console.log(element[0]._index);
             retrieve_weekly(weekly_csv[element[0]._index]);
+            var backbtn = document.getElementById("bar_back");
+            backbtn.style.display = "block";
             // if (element.length > 0) {
             //     var ind = element[0]._index;
             // }
@@ -150,7 +152,7 @@ function retrieve_weekly(csvpath) {
                 xAxes: [{
                     ticks: {
                         autoSkip: true,
-                        maxTicksLimit: 20
+                        maxTicksLimit: 13
                     }
                 }]
             },
@@ -174,7 +176,11 @@ function retrieve_weekly(csvpath) {
 function back_year() {
     myBarChart.destroy();
     display_yearly();
+    var backbtn = document.getElementById("bar_back");
+    backbtn.style.display = "none";
 }
+
+
 
 
 // init();
