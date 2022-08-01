@@ -28,6 +28,9 @@
     left: 0;
 }
 
+svg text {
+    color: white
+}
 
 select {
     min-width: 100px;

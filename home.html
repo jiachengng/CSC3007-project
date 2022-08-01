@@ -18,6 +18,10 @@
     <script src="leaflet.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script src="Chart.min.js"></script>
+    <script src="piechart.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <link rel="stylesheet" href="piechart.css">
+    <script src="https://d3js.org/d3.v6.js"></script>
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -88,11 +92,19 @@
             <div class="row">
                 <div class="features">
                     <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
-                        <p style="font-size: 25px">Singapore saw a huge total number of dengue cases back in 2020 totalling 35,315 with the highest weekly figure of 1787 back in 2020. During the first week of June this year, <b style="color: #38B6FF">1569</b> cases were reported
-                            with a possibility of the number exceeding 2000 sometime in the month <a href="https://www.straitstimes.com/singapore/health/59-stop-work-orders-issued-to-construction-sites-for-mosquito-breeding-this-year-9-firms-to-be-charged-nea">(Source)</a>.
+                        <p style="font-size: 25px">Singapore saw a huge total number of dengue cases back in 2020
+                            totalling 35,315 with the highest weekly figure of 1787 back in 2020. During the first week
+                            of June this year, <b style="color: #38B6FF">1569</b> cases were reported
+                            with a possibility of the number exceeding 2000 sometime in the month <a
+                                href="https://www.straitstimes.com/singapore/health/59-stop-work-orders-issued-to-construction-sites-for-mosquito-breeding-this-year-9-firms-to-be-charged-nea">(Source)</a>.
                         </p>
-                        <p style="font-size: 25px">The government has been actively reminding the citizens living in high risk neighbourhood to keep their environment dengue free by putting up large posters to raise awareness in the neighbourhood. </p>
-                        <p style="font-size: 25px">However, most people are unaware of the cases happening around them in detail, let alone the knowledge of other high risks zones. The <b style="color: #38B6FF">proposed solution</b> allows the users to visualise different <b style="color: #38B6FF">areas</b>                            of Singapore that <b style="color: #38B6FF">affected by
+                        <p style="font-size: 25px">The government has been actively reminding the citizens living in
+                            high risk neighbourhood to keep their environment dengue free by putting up large posters to
+                            raise awareness in the neighbourhood. </p>
+                        <p style="font-size: 25px">However, most people are unaware of the cases happening around them
+                            in detail, let alone the knowledge of other high risks zones. The <b
+                                style="color: #38B6FF">proposed solution</b> allows the users to visualise different <b
+                                style="color: #38B6FF">areas</b> of Singapore that <b style="color: #38B6FF">affected by
                                 dengue</b> through various idioms for more <b style="color: #38B6FF">in-depth insights
                                 and
                                 awareness.</b></p>
@@ -119,15 +131,21 @@
             <div class="row">
                 <div class="col-sm-12 wow fadeInLeft">
                     <canvas id="barChart"></canvas>
-                    <button type="button" class="btn btn-success btn-md" onclick="back_year();" style="display:none;" id="bar_back">Back </button>
+                    <button type="button" class="btn btn-success btn-md" onclick="back_year();" style="display:none;"
+                        id="bar_back">Back </button>
                 </div>
 
                 <div class="col-sm-12 wow fadeInRight">
                     <br>
                     <h3 class="column-title">Bar/Line Chart</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type
+                        specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                        of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum</p>
                 </div>
             </div>
         </div>
@@ -145,7 +163,7 @@
             <div class="row">
                 <div class="col-sm-12 wow fadeInLeft">
                     <div id="map"></div>
-                    <img src = "images/legend.PNG" style=" width: 200px; height: auto;" >
+                    <img src="images/legend.PNG" style=" width: 200px; height: auto;">
                 </div>
 
                 <div class="col-sm-12 wow fadeInRight">
@@ -153,9 +171,14 @@
                     <h3 style="color:black;" class="column-title">Chloropath Map</h3>
                     <p style="font-size: 135%;
                     font-weight: 400;
-                    font-family: Noto Sans,Roboto,Open Sans,sans-serif;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    font-family: Noto Sans,Roboto,Open Sans,sans-serif;">Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                        of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum</p>
                 </div>
             </div>
         </div>
@@ -172,15 +195,21 @@
 
             <div class="row">
                 <div class="col-sm-12 wow fadeInLeft">
-                    <H1>Work in Progress</H1>
+                    <!-- Create a div where the graph will take place -->
+                    <div id="my_dataviz"></div>
                 </div>
 
                 <div class="col-sm-12 wow fadeInRight">
                     <br>
                     <h3 class="column-title">DK what chart yet</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type
+                        specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                        of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum</p>
                 </div>
             </div>
         </div>
@@ -212,7 +241,7 @@
     <script src="js/wow.min.js"></script>
     <script src="js/custom-scripts.js"></script>
     <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v7.js"></script>
+    <!-- <script src="https://d3js.org/d3.v7.js"></script> -->
     <script src="map_script.js"></script>
     <script src="charts/js/bar_dengue.js"></script>
 </body>
