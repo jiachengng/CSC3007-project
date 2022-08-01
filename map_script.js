@@ -1,5 +1,5 @@
 // Api link for dengue cluster data
-const apiUrl = "https://jiachengng.github.io/CSC3007-project/dataset/dengue_cluster.json";
+const apiUrl1 = "https://jiachengng.github.io/CSC3007-project/dataset/dengue_cluster.json";
 
 const clinicJson = "https://jiachengng.github.io/CSC3007-project/dataset/clinic.json";
 
@@ -24,7 +24,7 @@ let map = new L.Map("map", {
   maxBounds: L.latLngBounds(L.latLng(1.1, 103.5), L.latLng(1.5, 104.3)),
 }).addLayer(tiles);
 
-fetch(apiUrl)
+fetch(apiUrl1)
   .then((response) => response.json())
   .then((data) => {
     console.log(data.SrchResults[1].ZONE);
