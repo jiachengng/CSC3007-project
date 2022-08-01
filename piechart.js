@@ -2,7 +2,7 @@
 const apiUrl = "https://jiachengng.github.io/CSC3007-project/dataset/dengue_cluster.json";
 
 // set the dimensions and margins of the graph
-const width = 450,
+const width = 1000,
   height = 450,
   margin = 40;
 
@@ -101,6 +101,17 @@ fetch(apiUrl)
       d3.select(this).style("stroke", "none").style("opacity", 0.8);
     };
 
+    svg.append("circle").attr("cx",200).attr("cy",30).attr("r", 6).style("fill", "green")
+    svg.append("circle").attr("cx",200).attr("cy",50).attr("r", 6).style("fill", "orange")
+    svg.append("circle").attr("cx",200).attr("cy",70).attr("r", 6).style("fill", "pink")
+    svg.append("circle").attr("cx",200).attr("cy",90).attr("r", 6).style("fill", "blue")
+    svg.append("circle").attr("cx",200).attr("cy",110).attr("r", 6).style("fill", "red")
+    svg.append("text").attr("x", 220).attr("y", 30).text("West").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 220).attr("y", 50).text("North").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 220).attr("y", 70).text("East").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 220).attr("y", 90).text("North East").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 220).attr("y", 110).text("Central").style("font-size", "15px").attr("alignment-baseline","middle")
+
     // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
     svg
       .selectAll('whatever')
@@ -116,6 +127,8 @@ fetch(apiUrl)
       .style("opacity", 0.7)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
+
+
   });
 // console.log(north)
 
