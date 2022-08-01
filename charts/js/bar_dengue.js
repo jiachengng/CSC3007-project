@@ -152,6 +152,7 @@ function retrieve_weekly(csvpath) {
                 xAxes: [{
                     ticks: {
                         autoSkip: true,
+                        stepSize: 5,
                         maxTicksLimit: 13
                     }
                 }]
