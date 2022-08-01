@@ -18,7 +18,7 @@ function display_yearly() {
     Promise.all([d3.csv("dataset/Yearly-Case.csv")]).then(data => {
 
         // Data successfully loaded
-        console.log(data[0][0]);
+        // console.log(data[0][0]);
         year = []
         year_data = []
 
@@ -30,8 +30,8 @@ function display_yearly() {
     })
 }
 
-console.log(year);
-console.log(year_data);
+// console.log(year);
+// console.log(year_data);
 display_yearly();
 
 // Initial chart for yearly dataset
@@ -76,8 +76,8 @@ function initialize_chart(year, year_data) {
         },
         onClick: function(evt) {
             var element = myBarChart.getElementAtEvent(evt);
-            console.log("hi");
-            console.log(element[0]._index);
+            // console.log("hi");
+            // console.log(element[0]._index);
             retrieve_weekly(weekly_csv[element[0]._index]);
             var backbtn = document.getElementById("bar_back");
             backbtn.style.display = "block";
@@ -100,7 +100,7 @@ function retrieve_weekly(csvpath) {
     Promise.all([d3.csv("dataset/" + csvpath)]).then(data => {
 
         // Data successfully loaded
-        console.log(data[0][0]);
+        // console.log(data[0][0]);
 
         var weekly_label = []
         var weekly_cases = []
