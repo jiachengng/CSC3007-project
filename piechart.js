@@ -54,7 +54,7 @@ fetch(apiUrl)
 
     // set the color scale
     const color = d3.scaleOrdinal()
-      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
+      .range(["orange", "red", "green", "blue", "pink"])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
