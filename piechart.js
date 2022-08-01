@@ -25,7 +25,7 @@ fetch(apiUrl)
       var caseSize = data.SrchResults[i].CASE_SIZE;
       if (locationName === "North") {
         north = north + parseInt(caseSize);
-        console.log(north)
+        // console.log(north)
       }
       else if (locationName === "Central") {
         central += parseInt(caseSize);
@@ -40,6 +40,12 @@ fetch(apiUrl)
         east = east + parseInt(caseSize);
       }
     }
+
+    console.log(north)
+    console.log(northEast)
+    console.log(east)
+    console.log(west)
+    console.log(central)
 
     // append the svg object to the div called 'my_dataviz'
     const svg = d3.select("#my_dataviz")
@@ -61,6 +67,40 @@ fetch(apiUrl)
       .value(function (d) { return d[1] })
     const data_ready = pie(Object.entries(pieChartData))
 
+    var tip = d3
+      .tip()
+      .attr("class", "d3-tip")
+      .offset([-10, 0])
+      .html(function (d, i) {
+        return (
+          "<strong>Number of Cases: </strong>" + "<span style='color:red'>" +
+          i.value +
+          "</span>"
+        );
+      });
+    svg.call(tip);
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    var mouseover = function (d) {
+      Tooltip.style("opacity", 1);
+      d3.select(this)
+        .style("stroke", "red")
+        .style("opacity", 1)
+        .style("stroke-width", 3);
+    };
+    var mousemove = function (d, i) {
+      var pos = d3.select(this).node().getBoundingClientRect(); // get moouse postion
+      Tooltip.html("Total Crimes: " + i.value)
+        .style("left", `${window.pageXOffset + pos["x"] - 50}px`)
+        .style("right", `${window.pageyOffset + pos["x"] - 50}px`);
+      // .style("left", d3.mouse(this)[0] + 70 + "px")
+      // .style("top", d3.mouse(this)[1] + "px");
+    };
+    var mouseleave = function (d) {
+      Tooltip.style("opacity", 0);
+      d3.select(this).style("stroke", "none").style("opacity", 0.8);
+    };
+
     // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
     svg
       .selectAll('whatever')
@@ -74,6 +114,8 @@ fetch(apiUrl)
       .attr("stroke", "black")
       .style("stroke-width", "2px")
       .style("opacity", 0.7)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
   });
 // console.log(north)
 
