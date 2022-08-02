@@ -98,15 +98,15 @@ fetch(apiUrl)
         };
 
         svg.append("circle").attr("cx", 200).attr("cy", 30).attr("r", 6).style("fill", "blue")
-        svg.append("circle").attr("cx", 200).attr("cy", 50).attr("r", 6).style("fill", "red")
-        svg.append("circle").attr("cx", 200).attr("cy", 70).attr("r", 6).style("fill", "green")
-        svg.append("circle").attr("cx", 200).attr("cy", 90).attr("r", 6).style("fill", "purple")
-        svg.append("circle").attr("cx", 200).attr("cy", 110).attr("r", 6).style("fill", "orange")
-        svg.append("text").attr("x", 220).attr("y", 30).text("West").style("font-size", "15px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
-        svg.append("text").attr("x", 220).attr("y", 50).text("North").style("font-size", "15px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
-        svg.append("text").attr("x", 220).attr("y", 70).text("East").style("font-size", "15px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
-        svg.append("text").attr("x", 220).attr("y", 90).text("North East").style("font-size", "15px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
-        svg.append("text").attr("x", 220).attr("y", 110).text("Central").style("font-size", "15px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
+        svg.append("circle").attr("cx", 200).attr("cy", 60).attr("r", 6).style("fill", "red")
+        svg.append("circle").attr("cx", 200).attr("cy", 90).attr("r", 6).style("fill", "green")
+        svg.append("circle").attr("cx", 200).attr("cy", 120).attr("r", 6).style("fill", "purple")
+        svg.append("circle").attr("cx", 200).attr("cy", 150).attr("r", 6).style("fill", "orange")
+        svg.append("text").attr("x", 220).attr("y", 30).text("West").style("font-size", "20px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
+        svg.append("text").attr("x", 220).attr("y", 60).text("North").style("font-size", "20px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
+        svg.append("text").attr("x", 220).attr("y", 90).text("East").style("font-size", "20px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
+        svg.append("text").attr("x", 220).attr("y", 120).text("North East").style("font-size", "20px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
+        svg.append("text").attr("x", 220).attr("y", 150).text("Central").style("font-size", "20px").style('fill', 'darkOrange').attr("alignment-baseline", "middle")
 
         // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
         svg
